@@ -10,8 +10,10 @@ class Plugin extends Base
 {
     public function initialize() {
 
-        $this->setContentSecurityPolicy(array('default-src' => "* 'self' 'unsafe-inline' 'unsafe-eval'"));
-        // $this->setContentSecurityPolicy(array('script-src' => "* 'self' 'unsafe-inline' 'unsafe-eval'"));
+        $this->setContentSecurityPolicy(array(
+            'default-src' => "* 'self' 'unsafe-inline' 'unsafe-eval'",
+            'img-src' => "'self' data:"
+        ));
     }
 
     public function onStartup() {
